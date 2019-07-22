@@ -66,6 +66,18 @@ class App extends Component{
 	      );
 	    }
 		
+		onAuth = (token) => {
+		    this.setState({
+		      authenticated: true,
+		    });
+		  }
+		
+		renderLogin = () => {
+		    return (
+		      <Authenticate onAuth={this.onAuth} />
+		    );
+		  }
+		
 		getToken = () => {
 		    return localStorage.getItem('token');
 		  }
